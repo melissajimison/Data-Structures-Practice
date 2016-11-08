@@ -202,4 +202,23 @@ class LinkedList
     @head = previous
   end
 
+  def duplicate(head_node)
+    current = head_node
+    #keep track of the previos is the key
+    previous = nil
+    while current != nil
+      if previous == nil
+        #set the head
+        @head = Node.new(head_node.value)
+        previous = @head
+      else
+        #rest of iterations
+        previous.next_node = Node.new(current.value)
+        previous = current
+      end
+      current = current.next
+    end
+    return @head
+  end
+
 end
