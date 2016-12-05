@@ -2,9 +2,9 @@ def contiguous(arrays)
   arrays.each do |array|
     array.sort!
   end
-  main_counter = 1
+  main_counter = 0
   arrays.each do |array|
-    counter = 1
+    counter = 0
     prev = nil
     array.each do |num|
       if prev != nil
@@ -26,3 +26,4 @@ end
 puts contiguous([[12,3,4,54,43],[6,4,3,5,9,8,7,10,2], [2,3,7,5]])
 puts contiguous([[12,1,3,4,2,54,43],[7,10,2], [2,3,7,5]])
 puts contiguous([[7,10,2], [2,3,7,5],[12,1,3,4,2,54,43]])
+puts contiguous([[7,10,2], [2,7,5],[12,1,4,54,43]])
