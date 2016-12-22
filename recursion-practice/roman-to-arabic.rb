@@ -9,22 +9,31 @@ CONVERSIONS = {
 }
 
 class Roman
-  def reverter_recursive(roman, arabic = 0)
+  def reverter(roman, arabic = 0)
     symbols = roman.chars
+    puts = "symbols: #{symbols}"
     return arabic if symbols.empty?
     CONVERSIONS.values.each do |symbol|
+      puts = "symbol: #{symbols}"
       symbol = symbols.shift
+      puts = "symbol.shift: #{symbols}"
       next_symbol = symbols.first
+      puts = "next_symbol: #{next_symbol}"
       value = CONVERSIONS[symbol]
+      puts = "value: #{value}"
       next_value = CONVERSIONS[next_symbol] || 0
+      puts = "next_value: #{next_value}"
 
       if next_value > value
         value = value * -1
       end
 
       arabic = arabic + value
+      puts = "arabic: #{arabic}"
       roman = symbols.join
-
+      puts = "roman: #{roman}"
+      puts
+      puts
       return reverter(roman, arabic)
     end
   end
