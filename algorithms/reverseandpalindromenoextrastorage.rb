@@ -24,6 +24,7 @@ def reverse_in_place(string)
   middle = string.length / 2
 
   while i <= middle || j >= middle do
+    #Ruby has parallel asingment... in other languages it woulb be necessary use a temp variable
     string[i], string[j] = string[j], string[i]
     i += 1
     j -= 1
