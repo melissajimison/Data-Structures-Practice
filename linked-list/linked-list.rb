@@ -112,6 +112,24 @@ class LinkedList
     end
     return current
   end
+  
+  def find_nth_from_end_no_size(n)
+     p1 = @head
+     p2 = @head
+  
+    i = 0
+    while i < n do
+      return nil if p1 != nil
+      p1 = p1.next 
+      i += 1
+    end
+     
+   while (p1 != nil)
+     p1 = p1.next
+     p2 = p2.next
+   end
+   return p2
+  end
 
   def middle_node
    fast = slow = @head
