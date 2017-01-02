@@ -4,9 +4,6 @@ def intertion_sort(array)
     element = array[i]
     j = i
     while j > 0 && array[j-1] > element
-      puts "array[j-1] #{array[j-1]}"
-      puts "array[j] #{array[j]}"
-      puts "element #{element}"
       array[j] = array[j-1]
       j = j - 1
     end
