@@ -1,6 +1,4 @@
 def quick_sort(array)
-  puts "theArray #{array}"
-  puts
   return array if array.length <= 1
   pivot = array.sample
   low, high = [], []
