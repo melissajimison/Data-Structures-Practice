@@ -8,11 +8,11 @@ def conquer(left, right)
   sorted = []
    until left.empty? || right.empty?
      if left.first <= right.first
-       sorted << left.shift
+       sorted.push(left.shift)
      else
-       sorted << right.shift
+       sorted.push(right.shift)
      end
    end
-   sorted.concat(left).concat(right)
+   sorted + left + right
 end
 puts "the result #{merge_sort([7,4,43,54,6,6,3,235,76,8,35])}"
