@@ -15,3 +15,5 @@ def intersection_sorted_arrays(arr_one, arr_two)
   end
   return final_array
 end
+
+puts intersection_sorted_arrays([2,3,4,5,6,7,8,8,9, 10],[1,5,7,9,10,10])
