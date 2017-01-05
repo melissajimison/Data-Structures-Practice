@@ -44,6 +44,19 @@ def print_postfix(node)
   print node.value + " "
 end
 
+def level_order_traversal(root)
+   parent= [root]
+   children = []
+   until parent.empty?
+      parent.each do |node|
+         children.push(node.left) unless node.left == nil
+         children.puhs(node.right) unless node.right == nil
+      end
+      parent = children
+      children = []
+   end
+end
+
 root = TreeNode.new("-")
 root.left = TreeNode.new("+")
 root.right = TreeNode.new("10")
