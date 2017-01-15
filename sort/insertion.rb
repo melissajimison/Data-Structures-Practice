@@ -5,7 +5,7 @@ def intertion_sort(array)
     j = i
     while j > 0 && array[j-1] > element
       array[j] = array[j-1]
-      j = j - 1
+      j -= 1
     end
     array[j] = element
   end
