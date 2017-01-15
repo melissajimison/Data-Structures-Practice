@@ -8,7 +8,7 @@ def bubble_sort(array)
       if array[i] > array[i+1]
         array[i], array[i+1] = array[i+1], array[i] # swap values
         swapped = true # found a swap... keep going
-        iterations += 1
+        i += 1
       end
     end
   end
