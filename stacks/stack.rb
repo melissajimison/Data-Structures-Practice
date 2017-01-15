@@ -18,7 +18,7 @@ class Stack
   end
 
   def self.isEmpty
-    @list.empty?
+    @list.length == 0
   end
 
   def reverse_recursive(array, new_array = nil)
@@ -38,9 +38,9 @@ class Stack
       stack.push(string[i])
     end
     for i in 0..string.length
-      reversedstring += stack.pop
+      reversed_string += stack.pop
     end
-    reversedstring
+    reversed_string
   end
 
 end
