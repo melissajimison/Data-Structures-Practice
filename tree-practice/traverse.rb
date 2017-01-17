@@ -50,11 +50,26 @@ def level_order_traversal(root)
    until parent.empty?
       parent.each do |node|
          children.push(node.left) unless node.left == nil
-         children.puhs(node.right) unless node.right == nil
+         children.push(node.right) unless node.right == nil
       end
       parent = children
       children = []
    end
+end
+
+def max_depth(node
+  if node == nil
+    return 0
+  else
+    l_depth = maxDepth(node.left)
+    r_depth = maxDepth(node.right)
+
+    if l_depth > r_depth)
+      return l_depth+1
+    else
+      return r_depth+1
+    end
+  end
 end
 
 root = TreeNode.new("-")
