@@ -1,0 +1,44 @@
+class TreeNode
+   attr_accessor :value, :left, :right
+
+   def initialize(val)
+     @value = val
+     @left = nil
+     @right = nil
+   end
+end
+
+Class Dll
+  attr_accessor :start, :end
+
+  def initialize(start, end)
+    @start = start
+    @end = end
+  end
+
+  def self.convert_bst_to_dll(node)
+
+    return dll if !node.right && !node.left
+  
+    left_side = convert_bst_to_dll(node.left)
+    right_side = convert_bst_to_dll(node.right)
+  
+    dll = dll.new(left_side.start, right_side.end)
+  
+    node.left = left_side.end
+    node.right = right_side.star
+  
+    left_side.end.right = node
+    right_side.first = node
+  end
+ end
+
+root = TreeNode.new(4)
+root.left = TreeNode.new(2)
+root.right = TreeNode.new(5)
+root.left.right = TreeNode.new(3)
+root.left.left = TreeNode.new(1)
+root.right.left = TreeNode.new(6)
+root.right.right = TreeNode.new(7)
+
+the_dll = Dll.convert_bst_to_dll(root)
