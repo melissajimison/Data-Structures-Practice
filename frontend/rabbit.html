@@ -62,12 +62,13 @@
         if (direction != 'hide') {
             assingValues(direction)
           } else {
+            document.getElementById("rabbit").style.display = 'none';
             setTimeout(function(){
-              document.getElementById("rabbit").setAttribute('display', 'none'); },
-              3000);
-              values = ['top', 'botton']
+              values = ['top', 'bottom']
               index = Math.floor((Math.random() * values.length))
               assingValues(values[index])
+              document.getElementById("rabbit").style.display = 'block'; },
+              3000);
           }
       }
       function assingValues(direction){
