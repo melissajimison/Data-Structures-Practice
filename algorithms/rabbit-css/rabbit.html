@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <style>
+      .parent {
+        position: relative;
+        height: 300px;
+        width: 310px;
+        background: #F2AF8E;
+      }
+      .buttons {
+        position: fixed;
+        top: 100px;
+      }
+      button {
+        height: 100px;
+        width: 100px;
+      }
+
+      #rabbit {
+        position: absolute;
+        height: 100px;
+      }
+
+      #top {
+          background: #5DBCD2;
+      }
+
+      #rabbit img{
+        width:100px;
+        height:100px;
+      }
+
+      #bottom {
+          background: #FF00FF;
+      }
+
+      #hide {
+          background: #D9CDD8;
+      }
+    </style>
+  </head>
+
+  <body>
+    <section class="parent">
+
+      <div id="rabbit">
+        <img src="rabbit.png" alt="rabbit">
+      </div>
+      <div class="buttons">
+        <button id="top">Top</button>
+        <button id="bottom">Bottom</button>
+        <button id="hide">Hide</button>
+      </div>
+    </section>
+
+    <script>
+      document.getElementById("top").addEventListener("click", function(){ moveTo('top'); });
+      document.getElementById("bottom").addEventListener("click", function(){ moveTo('bottom'); });
+      document.getElementById("hide").addEventListener("click", function(){ moveTo('hide'); });
+      function moveTo(direction){
+        if (direction != 'hide') {
+            assingValues(direction)
+          } else {
+            document.getElementById("rabbit").style.display = 'none';
+            setTimeout(function(){
+              values = ['top', 'bottom']
+              index = Math.floor((Math.random() * values.length))
+              assingValues(values[index])
+              document.getElementById("rabbit").style.display = 'block'; },
+              3000);
+          }
+      }
+      function assingValues(direction){
+        opposite = {
+          'top': 'bottom',
+          'bottom': 'top'
+        }
+        document.getElementById("rabbit").style[opposite[direction]] = null;
+        document.getElementById("rabbit").style[direction] = 0;
+
+      }
+    </script>
+  </body>
+</html>
