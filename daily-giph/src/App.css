@@ -1,0 +1,21 @@
+.App {
+  text-align: center;
+}
+
+.gif-list {
+  display: flex;
+}
+
+img {
+  height: 120px;
+  background-color: #444;
+  width: 100%;
+  object-fit: cover;
+}
+
+
+.gif-item {
+  float: left;
+  width: 80%;
+  margin: 0 30px 20px 0;
+}
